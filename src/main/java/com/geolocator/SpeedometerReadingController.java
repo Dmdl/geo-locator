@@ -1,8 +1,11 @@
 package com.geolocator;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.List;
 
 @RestController
 public class SpeedometerReadingController {
@@ -14,8 +17,13 @@ public class SpeedometerReadingController {
     }
 
     @PostMapping("location")
-    public String addSpeedometerReading(@RequestBody SpeedometerReading reading){
+    public String addSpeedometerReading(@RequestBody SpeedometerReading reading) {
         repository.addNewSpeedometerReading(reading);
         return "added";
+    }
+
+    @GetMapping("location")
+    public List<SpeedometerReading> getSpeedometerReading() {
+        return repository.getSpeedometerReadings();
     }
 }

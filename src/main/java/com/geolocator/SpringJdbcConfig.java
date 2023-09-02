@@ -17,11 +17,6 @@ public class SpringJdbcConfig {
     final
     Environment environment;
 
-    private final String URL = "url";
-    private final String USER = "dbuser";
-    private final String DRIVER = "driver";
-    private final String PASSWORD = "dbpassword";
-
     public SpringJdbcConfig(Environment environment) {
         this.environment = environment;
     }
@@ -29,10 +24,10 @@ public class SpringJdbcConfig {
     @Bean
     public DataSource mysqlDataSource() {
         var dataSource = new DriverManagerDataSource();
-        dataSource.setDriverClassName(environment.getProperty(DRIVER));
-        dataSource.setUrl(environment.getProperty(URL));
-        dataSource.setUsername(environment.getProperty(USER));
-        dataSource.setPassword(environment.getProperty(PASSWORD));
+        dataSource.setDriverClassName(environment.getProperty("driver"));
+        dataSource.setUrl(environment.getProperty("url"));
+        dataSource.setUsername(environment.getProperty("dbuser"));
+        dataSource.setPassword(environment.getProperty("dbpassword"));
         return dataSource;
     }
 }
