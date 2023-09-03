@@ -1,5 +1,6 @@
 package com.geolocator;
 
+import com.google.common.util.concurrent.RateLimiter;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -18,12 +19,22 @@ public class SpeedometerReadingController {
 
     @PostMapping("location")
     public String addSpeedometerReading(@RequestBody SpeedometerReading reading) {
-        repository.addNewSpeedometerReading(reading);
-        return "added";
+        var rateLimiter = RateLimiter.create(20);
+        if (rateLimiter.tryAcquire()) {
+            repository.addNewSpeedometerReading(reading);
+            return "added";
+        } else {
+            return "too many requests";
+        }
     }
 
     @GetMapping("location")
     public List<SpeedometerReading> getSpeedometerReading() {
-        return repository.getSpeedometerReadings();
+        var rateLimiter = RateLimiter.create(20);
+        if (rateLimiter.tryAcquire()) {
+            return repository.getSpeedometerReadings();
+        } else {
+            return List.of();
+        }
     }
 }
