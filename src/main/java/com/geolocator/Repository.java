@@ -18,7 +18,8 @@ public class Repository {
     }
 
     public void addNewSpeedometerReading(SpeedometerReading reading) {
-        jdbcTemplate.update(SQL_INSERT, reading.getSpeed(), reading.getLatitude(), reading.getLongitude());
+        jdbcTemplate.update(SQL_INSERT, reading.getSpeed(), reading.getLatitude(), reading.getLongitude(),
+                reading.getxValue(), reading.getyValue(), reading.getzValue());
     }
 
     public List<SpeedometerReading> getSpeedometerReadings() {
