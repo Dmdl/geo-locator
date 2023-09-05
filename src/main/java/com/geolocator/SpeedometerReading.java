@@ -4,19 +4,19 @@ import javax.validation.constraints.NotNull;
 
 public class SpeedometerReading {
     @NotNull
-    private double latitude;
+    private Double latitude;
     @NotNull
-    private double longitude;
+    private Double longitude;
     @NotNull
-    private double speed;
+    private Double speed;
     @NotNull
-    private double xValue;
+    private Double xValue;
     @NotNull
-    private double yValue;
+    private Double yValue;
     @NotNull
-    private double zValue;
+    private Double zValue;
 
-    public SpeedometerReading(double latitude, double longitude, double speed, double xValue, double yValue, double zValue) {
+    public SpeedometerReading(Double latitude, Double longitude, Double speed, Double xValue, Double yValue, Double zValue) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.speed = speed;
@@ -25,19 +25,19 @@ public class SpeedometerReading {
         this.zValue = zValue;
     }
 
-    public double getLatitude() {
+    public Double getLatitude() {
         return latitude;
     }
 
-    public void setLatitude(double latitude) {
+    public void setLatitude(Double latitude) {
         this.latitude = latitude;
     }
 
-    public double getLongitude() {
+    public Double getLongitude() {
         return longitude;
     }
 
-    public void setLongitude(double longitude) {
+    public void setLongitude(Double longitude) {
         this.longitude = longitude;
     }
 
@@ -45,31 +45,31 @@ public class SpeedometerReading {
         return speed;
     }
 
-    public void setSpeed(double speed) {
+    public void setSpeed(Double speed) {
         this.speed = speed;
     }
 
-    public double getxValue() {
+    public Double getxValue() {
         return xValue;
     }
 
-    public void setxValue(double xValue) {
+    public void setxValue(Double xValue) {
         this.xValue = xValue;
     }
 
-    public double getyValue() {
+    public Double getyValue() {
         return yValue;
     }
 
-    public void setyValue(double yValue) {
+    public void setyValue(Double yValue) {
         this.yValue = yValue;
     }
 
-    public double getzValue() {
+    public Double getzValue() {
         return zValue;
     }
 
-    public void setzValue(double zValue) {
+    public void setzValue(Double zValue) {
         this.zValue = zValue;
     }
 }
