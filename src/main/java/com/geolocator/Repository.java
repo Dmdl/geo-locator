@@ -10,8 +10,8 @@ public class Repository {
 
     private final JdbcTemplate jdbcTemplate;
 
-    private final String SQL_INSERT = "INSERT INTO speedometer_reading(reading, coordinate) values(?,POINT(?,?))";
-    private final String SQL_SELECT = "SELECT ST_X(coordinate) as latitude, ST_Y(coordinate) as longitude, reading FROM speedometer_reading";
+    private final String SQL_INSERT = "INSERT INTO speedometer_reading(reading, coordinate, x_value, y_value, z_value) values(?,POINT(?,?))";
+    private final String SQL_SELECT = "SELECT ST_X(coordinate) as latitude, ST_Y(coordinate) as longitude, reading, x_value, y_value, z_value FROM speedometer_reading";
 
     public Repository(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;

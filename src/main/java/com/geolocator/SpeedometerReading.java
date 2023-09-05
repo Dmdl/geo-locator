@@ -4,11 +4,17 @@ public class SpeedometerReading {
     private double latitude;
     private double longitude;
     private double speed;
+    private double xValue;
+    private double yValue;
+    private double zValue;
 
-    public SpeedometerReading(double latitude, double longitude, double speed) {
+    public SpeedometerReading(double latitude, double longitude, double speed, double xValue, double yValue, double zValue) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.speed = speed;
+        this.xValue = xValue;
+        this.yValue = yValue;
+        this.zValue = zValue;
     }
 
     public double getLatitude() {
@@ -33,5 +39,29 @@ public class SpeedometerReading {
 
     public void setSpeed(double speed) {
         this.speed = speed;
+    }
+
+    public double getxValue() {
+        return xValue;
+    }
+
+    public void setxValue(double xValue) {
+        this.xValue = xValue;
+    }
+
+    public double getyValue() {
+        return yValue;
+    }
+
+    public void setyValue(double yValue) {
+        this.yValue = yValue;
+    }
+
+    public double getzValue() {
+        return zValue;
+    }
+
+    public void setzValue(double zValue) {
+        this.zValue = zValue;
     }
 }
