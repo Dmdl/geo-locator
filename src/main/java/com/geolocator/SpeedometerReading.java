@@ -1,11 +1,19 @@
 package com.geolocator;
 
+import javax.validation.constraints.NotNull;
+
 public class SpeedometerReading {
+    @NotNull
     private double latitude;
+    @NotNull
     private double longitude;
+    @NotNull
     private double speed;
+    @NotNull
     private double xValue;
+    @NotNull
     private double yValue;
+    @NotNull
     private double zValue;
 
     public SpeedometerReading(double latitude, double longitude, double speed, double xValue, double yValue, double zValue) {

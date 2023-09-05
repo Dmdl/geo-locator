@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -18,7 +19,7 @@ public class SpeedometerReadingController {
     }
 
     @PostMapping("location")
-    public String addSpeedometerReading(@RequestBody SpeedometerReading reading) {
+    public String addSpeedometerReading(@Valid @RequestBody SpeedometerReading reading) {
         var rateLimiter = RateLimiter.create(20);
         if (rateLimiter.tryAcquire()) {
             repository.addNewSpeedometerReading(reading);
