@@ -40,7 +40,7 @@ public class SpeedometerReading {
         this.longitude = longitude;
     }
 
-    public double getSpeed() {
+    public Double getSpeed() {
         return speed;
     }
 
