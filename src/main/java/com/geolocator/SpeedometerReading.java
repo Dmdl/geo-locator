@@ -7,7 +7,6 @@ public class SpeedometerReading {
     private Double latitude;
     @NotNull
     private Double longitude;
-    @NotNull
     private Double speed;
     @NotNull
     private Double xValue;
